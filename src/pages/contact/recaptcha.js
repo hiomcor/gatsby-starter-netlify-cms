@@ -1,5 +1,5 @@
 import React from "react";
-import { navigateTo } from "gatsby-link";
+import { navigate } from "gatsby-link";
 import Recaptcha from "react-google-recaptcha";
 
 const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
@@ -35,7 +35,7 @@ export default class Contact extends React.Component {
         ...this.state
       })
     })
-      .then(() => navigateTo(form.getAttribute("action")))
+      .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
   };
 
